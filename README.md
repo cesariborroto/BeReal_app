@@ -2,7 +2,7 @@
 
 Submitted by: **Cesar Borroto**
 
-**BeReal** is an app that ... [TODO] 
+**BeReal** is an app that allows you to make posts online. 
 
 Time spent: **20** hours spent in total
 
