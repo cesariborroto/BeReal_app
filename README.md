@@ -39,7 +39,7 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+-It was difficult to work with logout cache.
 
 ## License
 
