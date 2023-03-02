@@ -1,8 +1,8 @@
 //
 //  DateFormatter+Extensions.swift
-//  BeReal project
+//  BeReal app
 //
-//  Created by Cesar Borroto on 02/22/2023.
+//  Created by Cesar Borroto on 02/22/2023
 //
 
 import Foundation

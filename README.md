@@ -17,7 +17,7 @@ The following **required** functionality is completed:
  
 The following **optional** features are implemented:
 
-- [ ] Users can pull to refresh their feed and see a loading indicator
+- [X] Users can pull to refresh their feed and see a loading indicator
 - [ ] Users can infinite-scroll in their feed to see past the 10 most recent photos
 - [X] Users can see location and time of photo upload in the feed	
 - [X] User is able to logout
@@ -28,7 +28,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/y6mhYP3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/vD1jjxy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  

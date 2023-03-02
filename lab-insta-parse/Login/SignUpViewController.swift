@@ -1,8 +1,8 @@
 //
 //  SignUpViewController.swift
-//  BeReal project
+//  BeReal app
 //
-//  Created by Cesar Borroto on 02/22/2023.
+//  Created by Cesar Borroto on 02/22/2023
 //
 
 import UIKit
@@ -56,13 +56,6 @@ class SignUpViewController: UIViewController {
                 self?.showAlert(description: error.localizedDescription)
             }
         }
-    }
-
-    private func showAlert(description: String?) {
-        let alertController = UIAlertController(title: "Unable to Sign Up", message: description ?? "Unknown error", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(action)
-        present(alertController, animated: true)
     }
 
     private func showMissingFieldsAlert() {

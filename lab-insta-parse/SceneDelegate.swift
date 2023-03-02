@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  BeReal project
+//  BeReal app
 //
-//  Created by Cesar Borroto on 02/22/2023.
+//  Created by Cesar Borroto on 02/22/2023
 //
 
 import UIKit
@@ -19,8 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        logOut()
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
@@ -29,13 +27,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         NotificationCenter.default.addObserver(forName: Notification.Name("login"), object: nil, queue: OperationQueue.main) { [weak self] _ in
             self?.login()
         }
+
+        NotificationCenter.default.addObserver(forName: Notification.Name("logout"), object: nil, queue: OperationQueue.main) { [weak self] _ in
+            self?.logOut()
+        }
+
+        // TODO: Pt 2 - Check for cached user for persisted log in.
+        // Check if a current user exists
+        if User.current != nil {
+            login()
+        }
     }
 
     private func login() {
         let storyboard = UIStoryboard(name: Constants.storyboardIdentifier, bundle: nil)
         self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: Constants.feedNavigationControllerIdentifier)
     }
-    
+
     private func logOut() {
         // TODO: Pt 2 - Log out Parse user.
         // This will also remove the session from the Keychain, log out of linked services and all future calls to current will return nil.
@@ -61,6 +69,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }
     }
+
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

@@ -1,15 +1,14 @@
 //
 //  AppDelegate.swift
-//  BeReal project
+//  BeReal app
 //
-//  Created by Cesar Borroto on 02/22/2023.
+//  Created by Cesar Borroto on 02/22/2023
 //
 
 import UIKit
 
-import ParseSwift
-
 // TODO: Pt 1 - Import Parse Swift
+import ParseSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,29 +17,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         // TODO: Pt 1 - Initialize Parse SDK
-        // https://github.com/parse-community/Parse-Swift/blob/main/ParseSwift.playground/Sources/Common.swift
 
-        
+        // Add the following values from your Parse server.
+        // For back4app hosted Parse servers:
+        //   - App Settings tab -> Security & Keys -> App Keys -> applicationId + clientKey
+        //   - App Settings tab -> App Management -> Parse API Address
+        // https://github.com/parse-community/Parse-Swift/blob/main/ParseSwift.playground/Sources/Common.swift
         ParseSwift.initialize(applicationId: "SBevU1uU7NPxXtwLhdBo3j7gcLP0omWdlCZoe77m",
                               clientKey: "2QaBoyCY6RrdmfEvjncGPSJcxN7maeCcEHFSAhxr",
                               serverURL: URL(string: "https://parseapi.back4app.com")!)
-        // TODO: Pt 1: - Instantiate and save a test parse object to your server
-        //
-        // Instantiate the test parse object
-        /*var score = GameScore()
-        score.playerName = "Kingsley"
-        score.points = 13
 
-        // Save to your server asynchronously (preferred way) - Performs work on background queue and returns to specified callbackQueue.
-        // If no callbackQueue is specified it returns to main queue.
-        score.save { result in
-            switch result {
-            case .success(let savedScore):
-                print("✅ Parse Object SAVED!: Player: \(String(describing: savedScore.playerName)), Score: \(String(describing: savedScore.points))")
-            case .failure(let error):
-                print("Error saving: \(error)")
-            }
-        }*/
+        // TODO: Pt 1: - Instantiate and save a test parse object to your server
+        // https://github.com/parse-community/Parse-Swift/blob/3d4bb13acd7496a49b259e541928ad493219d363/ParseSwift.playground/Pages/1%20-%20Your%20first%20Object.xcplaygroundpage/Contents.swift#L121
+
+//        var score = GameScore()
+//        score.playerName = "Kingsley"
+//        score.points = 13
+//
+//        // Save asynchronously (preferred way) - Performs work on background queue and returns to specified callbackQueue.
+//        // If no callbackQueue is specified it returns to main queue.
+//        score.save { result in
+//            switch result {
+//            case .success(let savedScore):
+//                print("✅ Parse Object SAVED!: Player: \(String(describing: savedScore.playerName)), Score: \(String(describing: savedScore.points))")
+//            case .failure(let error):
+//                assertionFailure("Error saving: \(error)")
+//            }
+//        }
+
         return true
     }
 
@@ -62,9 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // TODO: Pt 1 - Create Test Parse Object
 // https://github.com/parse-community/Parse-Swift/blob/3d4bb13acd7496a49b259e541928ad493219d363/ParseSwift.playground/Pages/1%20-%20Your%20first%20Object.xcplaygroundpage/Contents.swift#L33
 
-
-// Create your own value type `ParseObject`.
-/*struct GameScore: ParseObject {
+// Create your own value typed `ParseObject`.
+struct GameScore: ParseObject {
     // These are required by ParseObject
     var objectId: String?
     var createdAt: Date?
@@ -76,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // All custom properties must be optional.
     var playerName: String?
     var points: Int?
-}*/
+}
 
 // Sample Usage
 //
@@ -84,10 +87,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // score.playerName = "Kingsley"
 // score.points = 13
 
+
 // OR Implement a custom initializer (OPTIONAL i.e. NOT REQUIRED)
 // It's recommended to place custom initializers in an extension
 // to preserve the memberwise initializer.
-/*extension GameScore {
+extension GameScore {
 
     // Use the init to set your custom properties
     // NOTE: Properties in custom init are NOT required to be optional
@@ -95,8 +99,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.playerName = playerName
         self.points = points
     }
-}*/
+}
 
 // Sample Usage
 //
 // let score = GameScore(playerName: "Kingsley", points: 13)
+
+
